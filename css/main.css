@@ -1,0 +1,16 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    padding-top: 700px;
+}
+
+/* list view */
+
+#list-view {
+    height: 100%;
+    background-color: lightblue;
+    font-size: 2em;
+}
