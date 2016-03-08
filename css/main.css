@@ -14,3 +14,12 @@ body {
     background-color: lightblue;
     font-size: 2em;
 }
+
+
+
+/* map */
+
+#map {
+    background-color: lightgrey;
+    height: 100%;
+}
