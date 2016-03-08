@@ -1,0 +1,31 @@
+data = {
+  buildings: [
+      {
+          name: "PRB (Preston Research Bldg)",
+          address: "1301 Medical Center Dr", 
+          alt_addres: null, 
+          type: "research",
+          lat: 36.140509,
+          lon: -86.802791, 
+          notes: "above the TVC docks, elevator access from south side of dock."
+      },
+      {
+          name: "MCN (Medical Center North)",
+          address: "1301 Medical Center Dr", 
+          alt_addres: null, 
+          type: "hospital",
+          lat: 36.144234,
+          lon: -86.800236, 
+          notes: "pin is on the dock area, access to MRB3 and Godchaux Hall from here too."
+      },
+      {
+          name: "McGugin Complex",
+          address: "2601 Jess Neely", 
+          alt_addres: null, 
+          type: "athletic",
+          lat: 36.142327,
+          lon: -86.808426, 
+          notes: "dropbox and deliveries to mailroom in back."
+      }
+  ]  
+};
