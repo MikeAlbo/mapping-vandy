@@ -1,3 +1,6 @@
+$(document).ready(function(){
+    
+
 // init the map
 
 var mymap = L.map('map').setView([36.144, -86.80],14).setMaxBounds([[36.1, -87.1],[36.3, -86.1]]);
@@ -66,6 +69,16 @@ function chooseIcon(x) {
     }
 };
 
+// build popup \\
+
+function buildPopup(x){
+  var popup = '<div class="popup">';
+    popup += '<h1>'+x.properties.name +'<br>';
+    popup += '<small>'+ x.properties.type +'</small></h1>';
+    popup += '<p>'+x.properties.address+'</p>';
+    popup += '<p>'+x.properties.notes+'</p>';
+    return popup;
+};
 
 ////////////////
 // add geoJSON
@@ -73,7 +86,7 @@ function chooseIcon(x) {
 var teardrop = new L.Icon({iconUrl: '../images/marker-icon.png'});
 
 function vandyBuildings(feature, layer){
-    layer.bindPopup("</h1>"+ feature.properties.name+"</h1>");
+    layer.bindPopup(buildPopup(feature));
     layer.setIcon(chooseIcon(feature));
 };
 
@@ -88,3 +101,5 @@ console.log(data.geometry);
 
 
 //var marker = L.marker([36.144, -86.80]).addTo(mymap);
+    
+    }); // end document ready
