@@ -10,19 +10,77 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoibWlrZWFsYm9uZXR0aSIsImEiOiI5MzMwMmM4NGU5ZTc4NGRhZTMwNmUwODdhNjYwOGU1ZCJ9.7vD1iXBsAswoe5LsI10vRg'
 }).addTo(mymap);
 
+// add marker icons \\
+
+var greenIcon = L.icon({
+    iconUrl: '../images/custom_markers/green_marker.png',
+    shadowUrl: '../images/custom_markers/shadow.png',
+
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [60,60], // size of the shadow
+    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+    shadowAnchor: [-5, 5],  // the same for the shadow
+    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+});  // academic
+
+var blueIcon = L.icon({
+    iconUrl: '../images/custom_markers/blue_marker.png',
+    shadowUrl: '../images/custom_markers/shadow.png',
+
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [60,60], // size of the shadow
+    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+    shadowAnchor: [-5, 5],  // the same for the shadow
+    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+}); //  research
+
+var redIcon = L.icon({
+    iconUrl: '../images/custom_markers/red_marker.png',
+    shadowUrl: '../images/custom_markers/shadow.png',
+
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [60,60], // size of the shadow
+    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+    shadowAnchor: [-5, 5],  // the same for the shadow
+    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+}); // hospital
+
+var yellowIcon = L.icon({
+    iconUrl: '../images/custom_markers/yellow_marker.png',
+    shadowUrl: '../images/custom_markers/shadow.png',
+
+    iconSize:     [25, 41], // size of the icon
+    shadowSize:   [60,60], // size of the shadow
+    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
+    shadowAnchor: [-5, 5],  // the same for the shadow
+    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+}); //athletic
+
+function chooseIcon(x) {
+    switch(x.properties.type){
+        case "athletic" : return yellowIcon;
+        case "hospital" : return redIcon;
+        case "research" : return blueIcon;
+        case "academic" : return greenIcon;
+        default: return blueIcon;    
+    }
+};
+
+
+////////////////
 // add geoJSON
 
 var teardrop = new L.Icon({iconUrl: '../images/marker-icon.png'});
 
 function vandyBuildings(feature, layer){
-    layer.bindPopup("</h1> Hi, this is a info window</h1>");
-    layer.setIcon(teardrop);
+    layer.bindPopup("</h1>"+ feature.properties.name+"</h1>");
+    layer.setIcon(chooseIcon(feature));
 };
 
 
  L.geoJson(data, {
      onEachFeature: vandyBuildings
- }
+    }
 ).addTo(mymap);
 
 console.log(data.geometry);
