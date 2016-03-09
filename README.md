@@ -20,13 +20,21 @@ future versions:
     
     example json:
     
+    
+    
+    /// test json data
+    
     {
-        building: string,
-        type: string,
-        address: string, 
-        alt_address: stirng, 
-        lat: string,
-        lon: string, 
-        notes: string
-        
-    }
+                "type": "Feature",
+        "properties": {
+        "name": "PRB (Preston Research Bldg)",
+          "address": "1301 Medical Center Dr", 
+          "alt_addres": null, 
+          "type": "research", 
+          "notes": "above the TVC docks, elevator access from south side of dock."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.802791,36.140509]
+            }
+            }

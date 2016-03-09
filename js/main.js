@@ -10,3 +10,23 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoibWlrZWFsYm9uZXR0aSIsImEiOiI5MzMwMmM4NGU5ZTc4NGRhZTMwNmUwODdhNjYwOGU1ZCJ9.7vD1iXBsAswoe5LsI10vRg'
 }).addTo(mymap);
 
+// add geoJSON
+
+var teardrop = new L.Icon({iconUrl: '../images/marker-icon.png'});
+
+function vandyBuildings(feature, layer){
+    layer.bindPopup("</h1> Hi, this is a info window</h1>");
+    layer.setIcon(teardrop);
+};
+
+
+ L.geoJson(data, {
+     onEachFeature: vandyBuildings
+ }
+).addTo(mymap);
+
+console.log(data.geometry);
+
+
+
+//var marker = L.marker([36.144, -86.80]).addTo(mymap);
