@@ -23,7 +23,7 @@ var greenIcon = L.icon({
     shadowSize:   [60,60], // size of the shadow
     iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
     shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [10,-6] // point from which the popup should open relative to the iconAnchor
 });  // academic
 
 var blueIcon = L.icon({
@@ -34,7 +34,7 @@ var blueIcon = L.icon({
     shadowSize:   [60,60], // size of the shadow
     iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
     shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [10,-6] // point from which the popup should open relative to the iconAnchor
 }); //  research
 
 var redIcon = L.icon({
@@ -45,7 +45,7 @@ var redIcon = L.icon({
     shadowSize:   [60,60], // size of the shadow
     iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
     shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [10, -6] // point from which the popup should open relative to the iconAnchor
 }); // hospital
 
 var yellowIcon = L.icon({
@@ -56,7 +56,7 @@ var yellowIcon = L.icon({
     shadowSize:   [60,60], // size of the shadow
     iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
     shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+    popupAnchor:  [10, -6] // point from which the popup should open relative to the iconAnchor
 }); //athletic
 
 function chooseIcon(x) {
@@ -96,10 +96,45 @@ function vandyBuildings(feature, layer){
     }
 ).addTo(mymap);
 
-console.log(data.geometry);
+//console.log(data.geometry);
 
 
 
 //var marker = L.marker([36.144, -86.80]).addTo(mymap);
+    
+    
+    /// list view section \\\
+    
+    
+    
+  function buildList(){
+      var medOut = '';
+      var researchOut = '';
+      var academicOut = '';
+      var athleticOut = '';
+      
+      for(i = 0; i < data.features.length; i++){
+    var object = data.features[i];
+    var button  = '<button class="list-group-item building-button">'+object.properties.name+'</button>';
+          switch(object.properties.type){
+              case "medical" : medOut += button; break;
+              case "research" : researchOut += button; break;
+              case "athletic" : athleticOut += button; break;
+              case "academic" : academicOut += button; break;
+              default: medOut += button;
+          }
+          
+  }
+      
+    $("#medical-list").html(medOut);
+    $("#research-list").html(researchOut);
+    $("#academic-list").html(academicOut);
+    $("#athletic-list").html(athleticOut);  
+      
+}
+    
+    buildList();
+    
+    
     
     }); // end document ready

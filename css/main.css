@@ -24,6 +24,27 @@ body {
     height: 100%;
 }
 
-#popup  {
-    color: red;
+/* popup */
+.popup  {
+    text-align: center;
+}
+.popup h1 {
+    font-size: 1.3em;
+    margin: 0;
+}
+.popup p {
+    margin: .2em;
+}
+
+/* list view */
+
+.panel-heading {
+    font-size: .5em;
+    text-align: center;
+}
+
+.list-group button {
+    font-size: 50%;
+    text-align: center;
+    padding: .5em;
 }

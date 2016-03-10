@@ -1,30 +1,35 @@
-// mapping vandy //
+# Mapping Vandy
+---
+### Version 0.1
+this is the inital version on the site. 
 
-this is a reattempt at a Vandy mapping project I had attempted before. It's an effor to build it from scratch and not look at the code I used before. 
+---
+Mapping Vandy (currently) allows the user to  view the differnet building on the Vandy campus. 
 
-init verison: 
 
-    1. the entire site will reside inside the browser
-    
-future versions: 
-    1. map will be a MEAN app, with a server backend
-    2. As a user, I can add a location
-    3. As a user, I can update a location
-    4. As a user, I can sort locations
-    5. As a user, I can cross reference a location
-    
-    
-    
-    
-    ///////
-    
-    example json:
-    
-    
-    
-    /// test json data
-    
-    {
+---
+## technologies
+    * leaflet.js
+    * mapbox.com (tile layers)
+    * bootstrap
+    * jquery
+
+---
+## v 0. features
+    1. As a user, I can view all buildings on campus
+    2. As a user, I can view only buildings by type
+    3. As a user, I can reset the normal view
+    4. As a user, I can select an individual building
+        * the building will center on map
+        * the popup will open
+    5. add more...
+
+---
+
+## sample json 
+
+```javascript
+{
                 "type": "Feature",
         "properties": {
         "name": "PRB (Preston Research Bldg)",
@@ -38,3 +43,12 @@ future versions:
              "coordinates" : [-86.802791,36.140509]
             }
             }
+            
+            ```
+---
+## future features
+
+    1. as a user, I can signup
+    2. as a user, I can login
+    3. as a user, I can add buildings
+    4. as a user, I can modify content of popup
