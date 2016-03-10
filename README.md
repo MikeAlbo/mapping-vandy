@@ -9,20 +9,20 @@ Mapping Vandy (currently) allows the user to  view the differnet building on the
 
 ---
 ## technologies
-    * leaflet.js
-    * mapbox.com (tile layers)
-    * bootstrap
-    * jquery
+* leaflet.js
+* mapbox.com (tile layers)
+* bootstrap
+* jquery
 
 ---
 ## v 0. features
-    1. As a user, I can view all buildings on campus
-    2. As a user, I can view only buildings by type
-    3. As a user, I can reset the normal view
-    4. As a user, I can select an individual building
-        * the building will center on map
-        * the popup will open
-    5. add more...
+1. As a user, I can view all buildings on campus
+2. As a user, I can view only buildings by type
+3. As a user, I can reset the normal view
+4. As a user, I can select an individual building
+* the building will center on map
+* the popup will open
+5. add more...
 
 ---
 
@@ -44,11 +44,12 @@ Mapping Vandy (currently) allows the user to  view the differnet building on the
             }
             }
             
-            ```
+```
+
 ---
 ## future features
 
-    1. as a user, I can signup
-    2. as a user, I can login
-    3. as a user, I can add buildings
-    4. as a user, I can modify content of popup
+1. as a user, I can signup
+2. as a user, I can login
+3. as a user, I can add buildings
+4. as a user, I can modify content of popup
