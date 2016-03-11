@@ -45,6 +45,20 @@ data =
              "type" : "Point", 
              "coordinates" : [-86.808426,36.142327]
             }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Law School Building",
+          "address": "131 21st ave s", 
+          "alt_addres": null, 
+          "type": "academic", 
+          "notes": "mailroom is on 2nd floor, enter off of small round-about infrom of Owens."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.800042,36.148132]
+            }
             }
         ]};
 

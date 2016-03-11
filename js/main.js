@@ -135,6 +135,28 @@ function vandyBuildings(feature, layer){
     
     buildList();
     
+    $(".building-button").on('click', function(){
+       var buildingName = $(this).html();
+        //alert(buildingName);
+        locateBuilding(data, buildingName);
+        alert(output);
+    });
+    
+    function locateBuilding(x, buildingName){
+        //alert(buildingName);
+        var output;
+        for(i = 0; i < x.features.length; i++){
+            var object = x.features[i];
+            if (buildingName == object.properties.name){
+               // alert(object.geometry.coordinates + "and  the building name is " + object.properties.name);
+             output = object.geometry.coordinates;    
+            }
+            
+        }
+        //alert(output);
+        mymap.setView(new L.LatLng(output[1],output[0]), 16);
+    }
+    
     
     
     }); // end document ready
