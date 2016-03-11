@@ -139,7 +139,7 @@ function vandyBuildings(feature, layer){
        var buildingName = $(this).html();
         //alert(buildingName);
         locateBuilding(data, buildingName);
-        alert(output);
+       // alert(output);
     });
     
     function locateBuilding(x, buildingName){
@@ -155,7 +155,8 @@ function vandyBuildings(feature, layer){
         }
         //alert(output);
         mymap.setView(new L.LatLng(output[1],output[0]), 16);
-    }
+          
+    };
     
     
     

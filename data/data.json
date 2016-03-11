@@ -59,6 +59,62 @@ data =
              "type" : "Point", 
              "coordinates" : [-86.800042,36.148132]
             }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "TVC (The Vandy Clinic)",
+          "address": "1301 Medical Center Dr.", 
+          "alt_addres": null, 
+          "type": "hospital", 
+          "notes": "Enter at dock under PRB across from the VA. Park up front for final pickup, front doors lock at 7."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.802111,36.140480]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "VA hospital",
+          "address": "1310 24th Ave S", 
+          "alt_addres": null, 
+          "type": "medical", 
+          "notes": "enter at loading dock."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.803828,36.141472]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Feathering Hall",
+          "address": "401 24th Ave S", 
+          "alt_addres": "2415 Vanderbilt Pl", 
+          "type": "academic", 
+          "notes": "enter off of 24th (one way) down walkway."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.803443,36.144578]
+            }
+            }, 
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Jacobs Hall",
+          "address": "401 24th Ave S", 
+          "alt_addres":  "2415 Vanderbilt Pl", 
+          "type": "academic", 
+          "notes": "connected to Feathering Hall, everything on first floor goes to lab #(tbd) halway down hall on right. "
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.802779,36.144674]
+            }
             }
         ]};
 
