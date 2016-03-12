@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    
-
 // init the map
 
 var mymap = L.map('map').setView([36.144, -86.80],14).setMaxBounds([[36.1, -87.1],[36.3, -86.1]]);
@@ -139,6 +137,7 @@ function vandyBuildings(feature, layer){
        var buildingName = $(this).html();
         //alert(buildingName);
         locateBuilding(data, buildingName);
+        updateBrand(buildingName);
        // alert(output);
     });
     
@@ -157,7 +156,46 @@ function vandyBuildings(feature, layer){
         mymap.setView(new L.LatLng(output[1],output[0]), 16);
           
     };
+    //console.log(data);
+    ///////////////////// add search ///////////////////////
+    
+    $("#search").keyup(function(){
+        $('#search-results-div').popover('show');
+        var searchField = $('#search').val();
+        // alert(searchField);
+        var regex = new RegExp(searchField, "i");
+        var output = '<li class="list-group-item">';
+        var count = 1;
+        for(i = 0; i < data.features.length; i++){
+            var object = data.features[i];
+            if((object.properties.name.search(regex) != -1 || object.properties.type.search(regex) != -1)){
+                output += '<button class="list-group-item building-button">'+object.properties.name+'</button>';
+               
+                count ++;
+            }
+        }
+        output += '</li>';
+        if(searchField == ''){
+            $('#search-output').html('');
+        } else {
+            $('#search-output').html(output);
+        }
+        $("button").on('click', function(){
+       var buildingName = $(this).html();
+        locateBuilding(data, buildingName);    
+        $('#search-output').html('');
+        updateBrand(buildingName);    
+    });
+        
+    
+    }); // end keyup
     
     
+    /// navar brand title
+    
+    function updateBrand(x){
+        $("#navbar-building-title").html('<p>'+ x +'</p>');
+    }
+
     
     }); // end document ready

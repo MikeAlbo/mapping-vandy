@@ -1,7 +1,7 @@
 data = 
       {
         "type" : "FeatureCollection",
-        "features": [
+        "features":  [
             {
                 "type": "Feature",
         "properties": {
@@ -116,5 +116,6 @@ data =
              "coordinates" : [-86.802779,36.144674]
             }
             }
-        ]};
+        ]
+};
 
