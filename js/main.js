@@ -1,6 +1,6 @@
 $(document).ready(function(){
 // init the map
-
+//var markerRadius = 8;
 var mymap = L.map('map').setView([36.144, -86.80],14).setMaxBounds([[36.1, -87.1],[36.3, -86.1]]);
 
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
@@ -15,7 +15,7 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 var greenIcon = // academic
     {
-       radius: 8,
+    radius: updateRadius(),
     fillColor: "rgba(50,220,50,1)",
     color: "#000",
     weight: 1,
@@ -45,7 +45,7 @@ var redIcon = // hospital
 
 var yellowIcon = //athletic
     {
-       radius: 10,
+    radius: 10,
     fillColor: "rgba(250,200,50,1)",
     color: "#000",
     weight: 1,
@@ -95,14 +95,15 @@ function vandyBuildings(feature, layer){
     
 };
 
-
  L.geoJson(data, {
      onEachFeature: vandyBuildings,
      pointToLayer: function(feature, latling){
-        return L.circleMarker(latling, chooseIcon(feature))
+        return L.circleMarker(latling, chooseIcon(feature))      
     }
     }
-).addTo(mymap);
+).addTo(mymap); 
+    
+
 
 //console.log(data.geometry);
 
@@ -120,6 +121,7 @@ function vandyBuildings(feature, layer){
       var researchOut = '';
       var academicOut = '';
       var athleticOut = '';
+      var adminOut = '';
       
       for(i = 0; i < data.features.length; i++){
     var object = data.features[i];
@@ -129,6 +131,7 @@ function vandyBuildings(feature, layer){
               case "research" : researchOut += button; break;
               case "athletic" : athleticOut += button; break;
               case "academic" : academicOut += button; break;
+              case "admin" : adminOut += button; break;      
               default: medOut += button;
           }
           
@@ -137,7 +140,8 @@ function vandyBuildings(feature, layer){
     $("#medical-list").html(medOut);
     $("#research-list").html(researchOut);
     $("#academic-list").html(academicOut);
-    $("#athletic-list").html(athleticOut);  
+    $("#athletic-list").html(athleticOut); 
+    $("#admin-list").html(adminOut);  
       
 }
     
@@ -163,7 +167,7 @@ function vandyBuildings(feature, layer){
             
         }
         //alert(output);
-        mymap.setView(new L.LatLng(output[1],output[0]), 16);
+        mymap.setView(new L.LatLng(output[1],output[0]), 18);
           
     };
     //console.log(data);
@@ -210,5 +214,34 @@ function vandyBuildings(feature, layer){
         $("#navbar-building-title").html('<p>'+ x +'</p>');
     }
 
+    
+    // reset button 
+    
+    $("#reset-button").on('click', function(){
+        mymap.setView(new L.LatLng(36.144, -86.80), 14);
+    });
+    
+    //get zoom and resize the markers
+ 
+    function updateRadius(){
+        var zoom  = mymap.getZoom();
+       
+        switch(zoom) {
+            case 13 : return 8;
+            case 14 : return 10;
+            case 15 : return 12;
+            case 16 : return 14;
+            case 17 : return 16;
+            case 18 : return 18;
+            default : return 8;    
+        }
+    };
+    
+    mymap.on('zoomend', function(){ 
+        //L.Marker.setRadius( new updateRadius());
+        //greenIcon.radius = updateRadius();
+        //L.setRadius(100);
+    });
+    
     
     }); // end document ready

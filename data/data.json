@@ -115,6 +115,160 @@ data =
              "type" : "Point", 
              "coordinates" : [-86.802779,36.144674]
             }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Undergrad Admissions",
+          "address": "2305 West End Ave", 
+          "alt_addres": null, 
+          "type": "admin", 
+          "notes": "Deliver to loading Dock Area, ring buzzer. "
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.805037,36.148221]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Calhoun Hall",
+          "address": "2201 West End Ave", 
+          "alt_addres": null, 
+          "type": "academic", 
+          "notes": "please update with academic department"
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.801512,36.147246]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Owen Graduate School",
+          "address": "401 21st Ave S", 
+          "alt_addres": null, 
+          "type": "academic", 
+          "notes": "enter at small round-about inbetween Owen and Law School. Deliver to office on otherside of building. Pickup: upstairs, 3rd floor stairwell. Elevators Locked. "
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.800082,36.146975]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Divinity School",
+          "address": "411 21st Ave S.", 
+          "alt_addres": null, 
+          "type": "academic", 
+          "notes": "enter from round-about infront of Owens."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.800755,36.146698]
+            }
+            }, 
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "MRB3 (Medical Research Building 3)",
+          "address": "465 21st Ave S", 
+          "alt_addres": null, 
+          "type": "research", 
+          "notes": "access from MCN dock nd Stevenson Center Courtyard."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.800873,36.144643]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "MAB (Medical Arts Building)",
+          "address": "1211 21st Ave S", 
+          "alt_addres": null, 
+          "type": "hospital", 
+          "notes": "park in front if possible, else enter in rear of building off of Dixie Pl"
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.800426,36.142410]
+            }
+            }, 
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "MCE (Medical Center East)",
+          "address": "1201 Medical Center Dr", 
+          "alt_addres": null, 
+          "type": "hospital", 
+          "notes": "enter through tunel system or off Dixie Pl behind Oxford House."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.800942,36.142273]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "Oxford House",
+          "address": "1313 21st Ave s", 
+          "alt_addres": null, 
+          "type": "hospital", 
+          "notes": "Park in Median of 21st, or off of Dixie Pl. Do not block fire lane. "
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.800790,36.141063]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "RRB (Robinson Research Building)",
+          "address": "2200 Peirce Ave", 
+          "alt_addres": null, 
+          "type": "research", 
+          "notes": "connects to PRB and Light Hall, use elevators between Light Hall and RRB. Park at TVC dock area."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.802702,36.140948]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "LH (Light Hall)",
+          "address": "2215 Garland Ave", 
+          "alt_addres": null, 
+          "type": "research", 
+          "notes": "park either at MRB4 or between RRB and LH. Elevators on either side. You need a keycard for 902, unless you enter from MRB4."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.802426,36.142116]
+            }
+            },
+            {
+                "type": "Feature",
+        "properties": {
+        "name": "MRB4 (Medical Research Building 4), Langford Auditorium",
+          "address": "2215 Garland Ave", 
+          "alt_addres": null, 
+          "type": "research", 
+          "notes": "park on the MCN side of MRB4 or enter though LH."
+        },
+          "geometry" : {
+             "type" : "Point", 
+             "coordinates" : [-86.802394,36.142493]
+            }
             }
         ]
 };
