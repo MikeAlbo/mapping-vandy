@@ -169,17 +169,20 @@ function vandyBuildings(feature, layer){
         for(i = 0; i < data.features.length; i++){
             var object = data.features[i];
             if((object.properties.name.search(regex) != -1 || object.properties.type.search(regex) != -1)){
-                output += '<button class="list-group-item building-button">'+object.properties.name+'</button>';
+                output += '<button class="list-group-item btn btn-default building-button animated fadeIn">'+object.properties.name+'</button>';
                
                 count ++;
+                
             }
+            
         }
         output += '</li>';
         if(searchField == ''){
             $('#search-output').html('');
         } else {
             $('#search-output').html(output);
-        }
+            };
+        
         $("button").on('click', function(){
        var buildingName = $(this).html();
         locateBuilding(data, buildingName);    

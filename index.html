@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/animate.css">
      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">
     
     <style>body{padding-top:50px;}.starter-template{padding:40px 15px;text-align:center;}</style>
@@ -22,7 +24,7 @@
 
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+        <div class="col-md-2 col-md-offset-1">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -34,59 +36,61 @@
                 
             </div>
             
-            <form class="navbar-form navbar-right" role="search">
+            
+           
+        </div>
+        <div class="col-md-6 col-md-offset-2">
+        <p class="navbar-text" id="navbar-building-title"></p>    
+        <form class="navbar-form navbar-right" role="search">
   <div class="form-group">
     <input type="text" class="form-control" id="search" placeholder="Search">
   </div>
 </form>
-           <p class="navbar-text" id="navbar-building-title"></p>
         </div>
     </nav>
    
     
     <div class="hidden-sm hidden-xs col-md-3" id="list-view">
         
-       <div class="panel panel-default" id="medical-panel">
-        <div class="panel-heading">Medical Buildings</div>
-        <div class="panel-body">
+       <div class="col-md-12 text-center" id="medical-panel">
+           <h2 class="building-group-names">Medical Buildings</h2>
            <div class="list-group" id="medical-list">
             <button type= "button" class="list-group-item building-button">test button</button>
             </div> <!-- end list group -->
-           </div>  <!-- end panel body --> 
+            
         </div> <!-- end medical panel -->
-        <div class="panel panel-default" id="research-panel">
-        <div class="panel-heading">Research Buildings</div>
-        <div class="panel-body">
+        <div class="col-md-12 text-center" id="research-panel">
+        <h2 class="building-group-names">Research Buildings</h2>
+        
            <div class="list-group" id="research-list">
             <button type= "button" class="list-group-item building-button">test button</button>
             </div> <!-- end list group -->
-           </div>  <!-- end panel body --> 
         </div> <!-- end research panel -->
-        <div class="panel panel-default" id="academic-panel">
-        <div class="panel-heading">Academic Buildings</div>
-        <div class="panel-body">
+        <div class="col-md-12 text-center" id="academic-panel">
+        <h2 class="building-group-names">Academic Buildings</h2>
            <div class="list-group" id="academic-list">
             <button type= "button" class="list-group-item building-button">test button</button>
             </div> <!-- end list group -->
-           </div>  <!-- end panel body --> 
+           
         </div> <!-- end academic panel -->
-        <div class="panel panel-default" id="athletic-panel">
-        <div class="panel-heading">Athletic Buildings</div>
-        <div class="panel-body">
+        <div class="col-md-12 text-center" id="athletic-panel">
+        <h2 class="building-group-names">Athletic Buildings</h2>
+        
            <div class="list-group" id="athletic-list">
             <button type= "button" class="list-group-item building-button">test button</button>
-            </div> <!-- end list group -->
-           </div>  <!-- end panel body --> 
+            </div> <!-- end list group --> 
         </div> <!-- end athletic panel -->
     </div> <!-- end list view -->
     
   
     
     <div class="col-sm-12 col-md-9" id="map">
-     <div class="col-md-3 pull-right" id="search-results-div">
+     
+    </div> <!-- end map -->
+    
+    <div class="col-md-3 pull-right" id="search-results-div">
         <ul class="list-group" id="search-output"></ul>
     </div>
-    </div> <!-- end map -->
    
 
     
