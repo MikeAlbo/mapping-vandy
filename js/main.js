@@ -13,49 +13,54 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
 
 // add marker icons \\
 
-var greenIcon = L.icon({
-    iconUrl: '../images/custom_markers/green_marker.png',
-    shadowUrl: '../images/custom_markers/shadow.png',
+var greenIcon = // academic
+    {
+       radius: 8,
+    fillColor: "rgba(50,220,50,1)",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8  
+     };
 
-    iconSize:     [25, 41], // size of the icon
-    shadowSize:   [60,60], // size of the shadow
-    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
-    shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [10,-6] // point from which the popup should open relative to the iconAnchor
-});  // academic
+var blueIcon = //  research
+     {
+       radius: 8,
+    fillColor: "rgba(50,100,250,1)",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8  
+     };
 
-var blueIcon = L.icon({
-    iconUrl: '../images/custom_markers/blue_marker.png',
-    shadowUrl: '../images/custom_markers/shadow.png',
+var redIcon = // hospital
+    {
+       radius: 8,
+    fillColor: "rgba(250,50,50,1)",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8  
+     };
 
-    iconSize:     [25, 41], // size of the icon
-    shadowSize:   [60,60], // size of the shadow
-    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
-    shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [10,-6] // point from which the popup should open relative to the iconAnchor
-}); //  research
-
-var redIcon = L.icon({
-    iconUrl: '../images/custom_markers/red_marker.png',
-    shadowUrl: '../images/custom_markers/shadow.png',
-
-    iconSize:     [25, 41], // size of the icon
-    shadowSize:   [60,60], // size of the shadow
-    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
-    shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [10, -6] // point from which the popup should open relative to the iconAnchor
-}); // hospital
-
-var yellowIcon = L.icon({
-    iconUrl: '../images/custom_markers/yellow_marker.png',
-    shadowUrl: '../images/custom_markers/shadow.png',
-
-    iconSize:     [25, 41], // size of the icon
-    shadowSize:   [60,60], // size of the shadow
-    iconAnchor:   [0, 0], // point of the icon which will correspond to marker's location
-    shadowAnchor: [-5, 5],  // the same for the shadow
-    popupAnchor:  [10, -6] // point from which the popup should open relative to the iconAnchor
-}); //athletic
+var yellowIcon = //athletic
+    {
+       radius: 10,
+    fillColor: "rgba(250,200,50,1)",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8  
+     };
+var purpleIcon = //admin
+    {
+       radius: 8,
+    fillColor: "rgba(200,150,220,1)",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8  
+     };
 
 function chooseIcon(x) {
     switch(x.properties.type){
@@ -63,6 +68,7 @@ function chooseIcon(x) {
         case "hospital" : return redIcon;
         case "research" : return blueIcon;
         case "academic" : return greenIcon;
+        case "admin"    : return purpleIcon;    
         default: return blueIcon;    
     }
 };
@@ -85,12 +91,16 @@ var teardrop = new L.Icon({iconUrl: '../images/marker-icon.png'});
 
 function vandyBuildings(feature, layer){
     layer.bindPopup(buildPopup(feature));
-    layer.setIcon(chooseIcon(feature));
+    //layer.setIcon(chooseIcon(feature));
+    
 };
 
 
  L.geoJson(data, {
-     onEachFeature: vandyBuildings
+     onEachFeature: vandyBuildings,
+     pointToLayer: function(feature, latling){
+        return L.circleMarker(latling, chooseIcon(feature))
+    }
     }
 ).addTo(mymap);
 
